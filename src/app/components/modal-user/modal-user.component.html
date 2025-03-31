@@ -1,0 +1,103 @@
+<mat-dialog-content class="mat-typography">
+  <div class="title-content">
+    <h2 mat-dialog-title>Registrar usuario</h2>
+    <mat-icon
+      [mat-dialog-close]="showModalClose"
+      aria-hidden="false"
+      aria-label="Example home icon"
+      fontIcon="close"
+      class="icon-pointer"
+    ></mat-icon>
+  </div>
+
+  <mat-divider></mat-divider>
+  <form class="form-content" [formGroup]="form">
+    <div>
+      <mat-label>Departamento</mat-label>
+      <mat-form-field>
+        <mat-select
+          formControlName="department"
+          placeholder="Seleccione un departamento"
+        >
+          <mat-option
+            *ngFor="let item of listDepartment"
+            value="{{ item.nameDepa }}"
+            >{{ item.nameDepa }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-label>Cargo</mat-label>
+      <mat-form-field>
+        <mat-select formControlName="post" placeholder="Seleccione un cargo">
+          <mat-option *ngFor="let item of listPosition" [value]="item.namePost"
+            >{{ item.namePost }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-label>Usuario:</mat-label>
+      <mat-form-field class="example-full-width">
+        <input matInput formControlName="user" />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-label>Email:</mat-label>
+      <mat-form-field class="example-full-width">
+        <input type="email" matInput formControlName="email" />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-label>Primer Nombre:</mat-label>
+      <mat-form-field class="example-full-width">
+        <input matInput formControlName="firstName" />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-label>Segundo Nombre:</mat-label>
+      <mat-form-field class="example-full-width">
+        <input matInput formControlName="middleName" />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-label>Primer Apellido:</mat-label>
+      <mat-form-field class="example-full-width">
+        <input matInput formControlName="firstSurname" />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-label>Segundo Apellido:</mat-label>
+      <mat-form-field class="example-full-width">
+        <input matInput formControlName="secondLastName" />
+      </mat-form-field>
+    </div>
+  </form>
+
+  <mat-divider></mat-divider>
+
+  <div class="button-content">
+    <button
+      mat-button
+      mat-flat-button
+      color="primary"
+      [mat-dialog-close]="showModalClose"
+      (click)="onButtonSave()"
+    >
+      {{ isCreate ? "Registrar" : "Actualizar" }}
+    </button>
+
+    <!-- <button mat-button mat-flat-button color="primary">Actualizar</button> -->
+
+    <button
+      mat-button
+      mat-flat-button
+      color="secondary"
+      [mat-dialog-close]="showModalClose"
+    >
+      Cancelar
+    </button>
+  </div>
+</mat-dialog-content>
