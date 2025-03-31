@@ -1,0 +1,7 @@
+.button-content {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 1.25em;
+  height: 2.813em;
+
+}

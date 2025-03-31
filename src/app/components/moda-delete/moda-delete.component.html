@@ -1,0 +1,17 @@
+<mat-dialog-content>
+  <mat-label>¿Estas seguro de eliminar el elemento seleccionado?</mat-label>
+  <div class="button-content">
+    <button
+      mat-button
+      mat-flat-button
+      color="primary"
+      mat-dialog-close
+      (click)="onButtonConfirm()"
+    >
+      Aceptar
+    </button>
+    <button mat-button mat-flat-button color="secondary" mat-dialog-close>
+      Cancelar
+    </button>
+  </div>
+</mat-dialog-content>
