@@ -1,1 +1,38 @@
-<p>main-page works!</p>
+<div class="container">
+  <mat-label class="text-module">Modulo de Administracion</mat-label>
+  <mat-label class="text-admin">Administracion de Usuario</mat-label>
+
+  <div class="head-content">
+    <div class="head-content__select-container">
+      <form [formGroup]="form">
+        <mat-form-field>
+          <mat-label>Select</mat-label>
+          <mat-select formControlName="department">
+            <mat-option
+              *ngFor="let item of listDepartment"
+              [value]="item.nameDepa"
+              >{{ item.nameDepa }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+        <!-- <mat-form-field>
+          <mat-label>Select</mat-label>
+          <mat-select formControlName="post">
+            <mat-option
+              *ngFor="let item of listPosition"
+              [value]="item.namePost"
+              >{{ item.namePost }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field> -->
+      </form>
+    </div>
+
+    <button color="primary" mat-button mat-flat-button (click)="onButtonAdd()">
+      Crear nuevo usuario
+    </button>
+  </div>
+  <mat-divider></mat-divider>
+  <hr />
+  <app-table-list [dataSource]="dataSource"></app-table-list>
+</div>
