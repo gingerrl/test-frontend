@@ -4,16 +4,15 @@ import {
   inject,
   Input,
   OnChanges,
-  OnInit,
   SimpleChanges,
   ViewChild,
 } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { MatDialog } from '@angular/material/dialog';
 import { User } from '../../interfaces/user-interface';
-import { ModalUserComponent } from '../modal-user/modal-user.component';
 import { ModaDeleteComponent } from '../moda-delete/moda-delete.component';
+import { ModalUserComponent } from '../modal-user/modal-user.component';
 
 @Component({
   selector: 'app-table-list',
@@ -23,7 +22,6 @@ import { ModaDeleteComponent } from '../moda-delete/moda-delete.component';
 export class TableListComponent implements AfterViewInit, OnChanges {
   public dialog = inject(MatDialog);
   @Input() dataSource!: MatTableDataSource<User>;
-
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   displayedColumns: string[] = [
     'user',
@@ -38,10 +36,8 @@ export class TableListComponent implements AfterViewInit, OnChanges {
   constructor() {}
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log("changes",changes)
     if (changes['dataSource']) {
-      this.dataSource = changes['dataSource'].currentValue
-
+      this.dataSource = changes['dataSource'].currentValue;
     }
   }
   ngAfterViewInit() {
@@ -49,12 +45,10 @@ export class TableListComponent implements AfterViewInit, OnChanges {
   }
 
   onButtonEdit(item: User) {
-    console.log('editar', item);
     const dialogRef = this.dialog.open(ModalUserComponent, {
       data: item,
     });
 
-    console.log(dialogRef);
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
