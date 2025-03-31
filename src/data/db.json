@@ -1,0 +1,122 @@
+{
+  "users": [
+    {
+      "id": "4401fdb1290d9",
+      "user": "gromolea1994",
+      "firstName": "Ginger",
+      "middleName": "Katherine",
+      "firstSurname": "Romo",
+      "secondLastName": "Leal",
+      "department": "Technology",
+      "post": "Desarrollador FrontEnd",
+      "email": "gromo@gmail.com"
+    },
+    {
+      "id": "0714ca34ba50f",
+      "user": "steven1993",
+      "firstName": "Ronald",
+      "middleName": "Steven",
+      "firstSurname": "Flores",
+      "secondLastName": "Ramos",
+      "department": "Redes",
+      "post": "Analista de Redes",
+      "email": "steven@gmail.com"
+    },
+    {
+      "id": "f75865d8d85ef",
+      "user": "jfebres",
+      "firstName": "Jorge",
+      "middleName": "Fernando",
+      "firstSurname": "Febres",
+      "secondLastName": "Cordero",
+      "department": "Technology",
+      "post": "Desarrollador FrontEnd",
+      "email": "jfebres@gmail.com"
+    },
+    {
+      "id": "4429cc7e1ab81",
+      "user": "jdup",
+      "firstName": "Roy",
+      "middleName": "Adonis",
+      "firstSurname": "Carrasco",
+      "secondLastName": "Huaman",
+      "department": "People",
+      "post": "Analista de Redes",
+      "email": "roy@gmail.com"
+    },
+    {
+      "id": "",
+      "user": "victoria-romo25",
+      "firstName": "Mia",
+      "middleName": "Victoria",
+      "firstSurname": "Romo",
+      "secondLastName": "Romo",
+      "department": "Redes",
+      "post": "Analista de Redes",
+      "email": "victoria2025@gmail.com"
+    },
+    {
+      "id": "",
+      "user": "nathaly-ortiz",
+      "firstName": "Nathaly",
+      "middleName": "Paola",
+      "firstSurname": "Ortiz",
+      "secondLastName": "Plaza",
+      "department": "People",
+      "post": "Reclutador",
+      "email": "ortiz-nathaly@gmail.com"
+    }
+  ],
+  "department": [
+    {
+      "nameDepa": "Marketing",
+      "id": "35b1"
+    },
+    {
+      "nameDepa": "Redes",
+      "id": "2e78"
+    },
+    {
+      "nameDepa": "People",
+      "id": "df06"
+    },
+    {
+      "nameDepa": "Technology",
+      "id": "549f"
+    },
+    {
+      "nameDepa": "Pruebas Automatizadas",
+      "id": "3e6a"
+    },
+    {
+      "nameDepa": "RRHH",
+      "id": "dbc0"
+    }
+  ],
+  "position": [
+    {
+      "namePost": "Desarrollador FrontEnd",
+      "id": "0244"
+    },
+    {
+      "namePost": "Administrador",
+      "id": "b76e"
+    },
+    {
+      "namePost": "Desarrollador Backend",
+      "id": "ac03"
+    },
+    {
+      "namePost": "Analista de Redes",
+      "id": "9cc5"
+    },
+    {
+      "namePost": "Analista de Marketing",
+      "id": "be4d"
+    },
+    {
+      "namePost": "Reclutador",
+      "id": "069a"
+    }
+  ]
+}
