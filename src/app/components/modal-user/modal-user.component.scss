@@ -1,0 +1,32 @@
+.title-content {
+  display: flex;
+  justify-content: space-between;
+  &__pointer {
+    cursor: pointer;
+  }
+}
+.form-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0.938em 3.125em;
+  row-gap: 1.25em;
+  column-gap: 2em;
+  min-width: 10.375em;
+  max-width: 31.24em;
+  width: 100%;
+
+  &__form-content div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.button-content {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 3.125em;
+  height: 2.813em;
+}
+
+

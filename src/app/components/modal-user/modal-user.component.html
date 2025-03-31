@@ -1,12 +1,11 @@
 <mat-dialog-content class="mat-typography">
   <div class="title-content">
-    <h2 mat-dialog-title>Registrar usuario</h2>
+    <h2 mat-dialog-title>  {{ isCreate ? "Registrar usuario" : "Actualizar usuario" }}</h2>
     <mat-icon
       [mat-dialog-close]="showModalClose"
       aria-hidden="false"
-      aria-label="Example home icon"
       fontIcon="close"
-      class="icon-pointer"
+      class="title-content__pointer"
     ></mat-icon>
   </div>
 
@@ -40,37 +39,37 @@
     </div>
     <div>
       <mat-label>Usuario:</mat-label>
-      <mat-form-field class="example-full-width">
+      <mat-form-field>
         <input matInput formControlName="user" />
       </mat-form-field>
     </div>
     <div>
       <mat-label>Email:</mat-label>
-      <mat-form-field class="example-full-width">
+      <mat-form-field>
         <input type="email" matInput formControlName="email" />
       </mat-form-field>
     </div>
     <div>
       <mat-label>Primer Nombre:</mat-label>
-      <mat-form-field class="example-full-width">
+      <mat-form-field>
         <input matInput formControlName="firstName" />
       </mat-form-field>
     </div>
     <div>
       <mat-label>Segundo Nombre:</mat-label>
-      <mat-form-field class="example-full-width">
+      <mat-form-field>
         <input matInput formControlName="middleName" />
       </mat-form-field>
     </div>
     <div>
       <mat-label>Primer Apellido:</mat-label>
-      <mat-form-field class="example-full-width">
+      <mat-form-field>
         <input matInput formControlName="firstSurname" />
       </mat-form-field>
     </div>
     <div>
       <mat-label>Segundo Apellido:</mat-label>
-      <mat-form-field class="example-full-width">
+      <mat-form-field>
         <input matInput formControlName="secondLastName" />
       </mat-form-field>
     </div>
@@ -88,8 +87,6 @@
     >
       {{ isCreate ? "Registrar" : "Actualizar" }}
     </button>
-
-    <!-- <button mat-button mat-flat-button color="primary">Actualizar</button> -->
 
     <button
       mat-button

@@ -1,20 +1,20 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserService } from '../../services/user-service.service';
-import { Department, Post } from '../../interfaces/user-interface';
-import { NgEventBus } from 'ng-event-bus';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { NgEventBus } from 'ng-event-bus';
+import { Department, Post } from '../../interfaces/user-interface';
+import { UserService } from '../../services/user-service.service';
 
 @Component({
   selector: 'app-modal-user',
   templateUrl: './modal-user.component.html',
-  styleUrl: './modal-user.component.css',
+  styleUrl: './modal-user.component.scss',
 })
 export class ModalUserComponent implements OnInit {
   isCreate = true;
   showModalClose = false;
   form: FormGroup = this.fb.group({
-    id: [''],
+    id:[''],
     user: [
       '',
       [Validators.required, Validators.minLength(3), Validators.maxLength(10)],
@@ -53,9 +53,7 @@ export class ModalUserComponent implements OnInit {
     private readonly userService: UserService,
     private readonly eventBus: NgEventBus,
     @Inject(MAT_DIALOG_DATA) public updateData: any
-  ) {
-    console.log(this.updateData)
-  }
+  ) {}
 
   ngOnInit(): void {
     if (this.updateData) {
@@ -70,12 +68,15 @@ export class ModalUserComponent implements OnInit {
     });
   }
 
-  onButtonSave(){
-    if(this.isCreate) return this.onListAdd();
-    this.onListUpdate()
+  onButtonSave() {
+    if (this.isCreate) return this.onListAdd();
+    this.onListUpdate();
   }
 
   onListAdd() {
+    this.form.patchValue({
+      id: Math.random().toString(16).slice(2),
+    });
     this.userService.addProduct(this.form.value).subscribe((data) => {
       this.eventBus.cast('add-list', data);
       this.showModalClose = true;
@@ -90,7 +91,6 @@ export class ModalUserComponent implements OnInit {
   }
 
   onListChanges() {
-    console.log("changes")
     this.form.setValue({
       id: this.updateData.id,
       user: this.updateData.user,
