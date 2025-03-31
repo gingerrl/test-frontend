@@ -1,31 +1,41 @@
 <div class="container">
-  <mat-label class="text-module">Modulo de Administracion</mat-label>
-  <mat-label class="text-admin">Administracion de Usuario</mat-label>
+  <mat-label class="container__text-module">Modulo de Administración</mat-label>
+  <mat-label class="container__text-admin">Administración de Usuario</mat-label>
 
-  <div class="head-content">
-    <div class="head-content__select-container">
-      <form [formGroup]="form">
-        <mat-form-field>
-          <mat-label>Select</mat-label>
-          <mat-select formControlName="department">
-            <mat-option
-              *ngFor="let item of listDepartment"
-              [value]="item.nameDepa"
-              >{{ item.nameDepa }}</mat-option
-            >
-          </mat-select>
-        </mat-form-field>
-        <!-- <mat-form-field>
-          <mat-label>Select</mat-label>
-          <mat-select formControlName="post">
-            <mat-option
-              *ngFor="let item of listPosition"
-              [value]="item.namePost"
-              >{{ item.namePost }}</mat-option
-            >
-          </mat-select>
-        </mat-form-field> -->
-      </form>
+  <div class="option-content">
+    <div class="option-content__select-container">
+      <div class="option-content__select-reset">
+        <form [formGroup]="form">
+          <mat-form-field>
+            <mat-label>Seleccione Departamento</mat-label>
+            <mat-select formControlName="department">
+              <mat-option
+                *ngFor="let item of listDepartment"
+                [value]="item.nameDepa"
+                >{{ item.nameDepa }}</mat-option
+              >
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Seleccione Cargo</mat-label>
+            <mat-select formControlName="post">
+              <mat-option
+                *ngFor="let item of listPosition"
+                [value]="item.namePost"
+                >{{ item.namePost }}</mat-option
+              >
+            </mat-select>
+          </mat-form-field>
+        </form>
+        <button
+          color="primary"
+          mat-button
+          mat-flat-button
+          (click)="resetFilter()"
+        >
+          Resetear
+        </button>
+      </div>
     </div>
 
     <button color="primary" mat-button mat-flat-button (click)="onButtonAdd()">

@@ -4,18 +4,13 @@ import {
   inject,
   OnInit,
 } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { NgEventBus } from 'ng-event-bus';
 import { ModalUserComponent } from '../../components/modal-user/modal-user.component';
 import { Department, Post, User } from '../../interfaces/user-interface';
 import { UserService } from '../../services/user-service.service';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
 
 @Component({
   selector: 'app-main-page',
@@ -26,11 +21,9 @@ import {
 export class MainPageComponent implements OnInit {
   public dialog = inject(MatDialog);
   listUser: User[] = [];
-  dataListFilter: User[] = [];
   listDepartment: Department[] = [];
   listPosition: Post[] = [];
   dataSource = new MatTableDataSource<User>();
-  dataSourceFilter: any[] = [];
 
   form: FormGroup = this.fb.group({
     department: [''],
@@ -62,26 +55,28 @@ export class MainPageComponent implements OnInit {
   onListUser() {
     this.listService.getLists().subscribe((data) => {
       this.dataSource.data = data;
-
       this.dataSource.filterPredicate = this.filterPredicate;
-      this.form.valueChanges.subscribe((value) => this.applyFilter(value));
+      this.form.controls['department'].valueChanges.subscribe((value) =>
+        this.applyFilter(value)
+      );
+      this.form.controls['post'].valueChanges.subscribe((value) =>
+        this.applyFilter(value)
+      );
     });
   }
 
   applyFilter(value: string): void {
-    console.log('value', value);
-    this.dataSource.filter= value;
-    this.dataSourceFilter = this.dataSource.filteredData;
-    console.log("filterrr", this.dataSourceFilter)
-
+    this.dataSource.filter = value;
   }
 
   filterPredicate(data: User, filter: string) {
-    console.log('data', data.department.nameDepa, filter);
-    const departmentMatch = data.department.nameDepa === filter;
-    const postMatch = data.post.namePost === filter;
+    const departmentMatch = data.department === filter;
+    const postMatch = data.post === filter;
 
-    return departmentMatch;
+    return departmentMatch || postMatch;
+  }
+  resetFilter(): void {
+    this.dataSource.filter = ''; // Limpiar el filtro
   }
   onButtonAdd() {
     const dialogRef = this.dialog.open(ModalUserComponent);
