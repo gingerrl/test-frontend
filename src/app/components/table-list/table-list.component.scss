@@ -1,0 +1,21 @@
+
+.button-action {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  cursor: pointer;
+
+  &__edit {
+    color: #48752c;
+  }
+  &__delete {
+    color: red;
+  }
+  &__text {
+    margin-top: 5px;
+  }
+}
+.paginator{
+  display: flex;
+  justify-content: center;
+}
