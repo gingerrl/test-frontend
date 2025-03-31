@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, Observable, of } from 'rxjs';
 import { Endpoints } from '../config/endpoints.enum';
 import { Department, Post, User } from '../interfaces/user-interface';
 
@@ -11,32 +11,42 @@ export class UserService {
   constructor(private http: HttpClient) {}
 
   getLists(): Observable<User[]> {
-    return this.http.get<User[]>(`${Endpoints.URL}/users`);
+    return this.http
+      .get<User[]>(`${Endpoints.URL}/users`)
+      .pipe(catchError(() => of([])));
   }
 
   getDepartment(): Observable<Department[]> {
-    return this.http.get<Department[]>(`${Endpoints.URL}/department`);
+    return this.http
+      .get<Department[]>(`${Endpoints.URL}/department`)
+      .pipe(catchError(() => of([])));
   }
 
   getPosition(): Observable<Post[]> {
-    return this.http.get<Post[]>(`${Endpoints.URL}/position`);
+    return this.http
+      .get<Post[]>(`${Endpoints.URL}/position`)
+      .pipe(catchError(() => of([])));
   }
 
-
   delete(id: string) {
-    return this.http.delete(`${Endpoints.URL}/users/${id}`);
+    return this.http
+      .delete(`${Endpoints.URL}/users/${id}`)
+      .pipe(catchError(() => of([])));
   }
 
   addProduct(body: User) {
-    const resp = this.http.post(`${Endpoints.URL}/users`, body, {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-    return resp;
+    return this.http
+      .post(`${Endpoints.URL}/users`, body, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+      .pipe(catchError(() => of([])));
   }
 
   updateProduct(body: User) {
-    return this.http.put(`${Endpoints.URL}/users/${body.id}`, body);
+    return this.http
+      .put(`${Endpoints.URL}/users/${body.id}`, body)
+      .pipe(catchError(() => of([])));
   }
 }

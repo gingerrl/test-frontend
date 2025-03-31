@@ -24,7 +24,7 @@
     },
     {
       "id": "f75865d8d85ef",
-      "user": "jfebres",
+      "user": "jfebres-05",
       "firstName": "Jorge",
       "middleName": "Fernando",
       "firstSurname": "Febres",
@@ -35,7 +35,7 @@
     },
     {
       "id": "4429cc7e1ab81",
-      "user": "jdup",
+      "user": "roy-nowis",
       "firstName": "Roy",
       "middleName": "Adonis",
       "firstSurname": "Carrasco",
@@ -45,26 +45,81 @@
       "email": "roy@gmail.com"
     },
     {
-      "id": "",
-      "user": "victoria-romo25",
-      "firstName": "Mia",
-      "middleName": "Victoria",
-      "firstSurname": "Romo",
-      "secondLastName": "Romo",
-      "department": "Redes",
-      "post": "Analista de Redes",
-      "email": "victoria2025@gmail.com"
+      "id": "a3b4af9ab0227",
+      "user": "anthony-mosquera",
+      "firstName": "Anthony",
+      "middleName": "Raul",
+      "firstSurname": "Mosquera",
+      "secondLastName": "Molina",
+      "department": "Pruebas Automatizadas",
+      "post": "Analista QA",
+      "email": "anthony@gmail.com"
     },
     {
-      "id": "",
-      "user": "nathaly-ortiz",
-      "firstName": "Nathaly",
-      "middleName": "Paola",
-      "firstSurname": "Ortiz",
-      "secondLastName": "Plaza",
-      "department": "People",
+      "id": "f4cd660dcc222",
+      "user": "niver-rosales",
+      "firstName": "Niver",
+      "middleName": "Flavio",
+      "firstSurname": "Rosales",
+      "secondLastName": "Paz",
+      "department": "Technology",
+      "post": "Desarrollador FrontEnd",
+      "email": "niver@gmail.com"
+    },
+    {
+      "id": "7382772b288f1",
+      "user": "rene2025",
+      "firstName": "Rene",
+      "middleName": "Aldair",
+      "firstSurname": "Barrezueta",
+      "secondLastName": "Gualli",
+      "department": "Pruebas Automatizadas",
+      "post": "Analista QA",
+      "email": "rene@gmail.com"
+    },
+    {
+      "id": "cec8748a4ce28",
+      "user": "francisco52",
+      "firstName": "Francisco",
+      "middleName": "Eddy",
+      "firstSurname": "Gonzales",
+      "secondLastName": "Huaman",
+      "department": "RRHH",
       "post": "Reclutador",
-      "email": "ortiz-nathaly@gmail.com"
+      "email": "francisco@gmail.com"
+    },
+    {
+      "id": "c964a6623e73e",
+      "user": "maria-paula",
+      "firstName": "Maria",
+      "middleName": "Paula",
+      "firstSurname": "Lopez",
+      "secondLastName": "Ramos",
+      "department": "Marketing",
+      "post": "Analista de Marketing",
+      "email": "paula@gmail.com"
+    },
+    {
+      "id": "df01e3bd7737c",
+      "user": "medardo-javier",
+      "firstName": "Javier",
+      "middleName": "Gabriel",
+      "firstSurname": "Medardo",
+      "secondLastName": "Torres",
+      "department": "Redes",
+      "post": "Analista de Redes",
+      "email": "medardo@gmail.com"
+    },
+    {
+      "id": "d308decc38702",
+      "user": "kimberly-sornoza",
+      "firstName": "Kimberly",
+      "middleName": "Laura",
+      "firstSurname": "Sornoza",
+      "secondLastName": "Gonzabay",
+      "department": "Technology",
+      "post": "Desarrollador Backend",
+      "email": "kimberly@gmail.com"
     }
   ],
   "department": [
@@ -99,7 +154,7 @@
       "id": "0244"
     },
     {
-      "namePost": "Administrador",
+      "namePost": "Analista QA",
       "id": "b76e"
     },
     {
